@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Devops-Portfolio-1/ArgoCD-Projects.git
+    targetRevision: HEAD
+    path: dev
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+# will create the myapp namespace if it doesn't exist and deploy the application theres
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+# will automatically sync the application when changes are detected in the git repository, and will also automatically heal any drift from the desired state and prune resources that are no longer defined in the git repository
+    automated:
+      selfHeal: true
+      prune: true
