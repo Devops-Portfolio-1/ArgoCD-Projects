@@ -21,5 +21,5 @@ spec:
 
 # will automatically sync the application when changes are detected in the git repository, and will also automatically heal any drift from the desired state and prune resources that are no longer defined in the git repository
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: true  #when updating the application
+      prune: true # when deleting the application, it will also delete all the resources that were created by the application
