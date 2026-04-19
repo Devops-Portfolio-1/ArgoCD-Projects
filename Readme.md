@@ -7,7 +7,14 @@ This repository contains ArgoCD application definitions for deploying applicatio
 
 Each application is defined in a separate YAML file and can be deployed using ArgoCD for continuous delivery.
 
-Purpose : Prevents direct changes to the cluster and ensures that all deployments are managed through GitOps practices. (Single source of truth)
+> ✨ Purpose : Prevents direct changes to the cluster and ensures that all deployments are managed through GitOps practices. (Single source of truth)
+
+## 🧠 Key Concepts 
+
+- **GitOps**: Git as the single source of truth
+- **Declarative Infrastructure**: YAML manifests define system state
+- **Continuous Reconciliation**: Auto-sync between Git & cluster
+- **Pull-based Deployment**: Cluster pulls changes instead of CI pushing
 
 ## Method 01: Deploy an application using a manifest file
 
@@ -16,7 +23,20 @@ Purpose : Prevents direct changes to the cluster and ensures that all deployment
 
 ## Method 02: Deploy an application using a Helm chart
 
+![ArgoCD Application GUI](images/Argo%20image%203.png)
+![ArgoCD Application GUI](images/Argo%20image%204.png)
+-
+Verifying the ArgoCD deployment (Helm) in the cluster
+![ArgoCD Application GUI](images/Argo%20image%208.png)
+
+
 ## Method 03: Deploy an application using Kustomize
+
+![ArgoCD Application GUI](images/Argo%20image%205.png)
+![ArgoCD Application GUI](images/Argo%20image%206.png)
+-
+Verifying the ArgoCD deployment (Kustomized) in the cluster
+![ArgoCD Application GUI](images/Argo%20image%207.png)
 
 ## Install the latest stable version of ArgoCD
 
@@ -70,3 +90,6 @@ argocd app rollback <appname>   # Roll back to a previous version
 argocd app set <appname>        # Update application configuration
 argocd app delete <appname>     # Delete an application
 ```
+
+My Notes on this :
+https://www.notion.so/myblogsite-shalindraperera/ArgoCD-3462e548f396806fbf6dfa6a40625d42?source=copy_link
