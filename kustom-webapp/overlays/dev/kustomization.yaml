@@ -1,8 +1,9 @@
-bases:
-- ../../base
+resources:
+- ../../base #Inheriting from the base configuration
+
 
 patches:
- - replicas.yaml
+ - path: replicas.yaml
 
 configMapGenerator:
 - name: mykustom-map

@@ -2,8 +2,10 @@ resources:
 - deployment.yaml
 - service.yaml
 
-commonLabels:
-  app: kustomwebapp
+labels:
+- pairs:
+    app: kustomwebapp
+  includeSelectors: true
 
 commonAnnotations:
   app: mykustom-annontations
